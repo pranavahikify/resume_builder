@@ -1,0 +1,158 @@
+.downloads-page {
+  max-width: 900px;
+  padding-bottom: 3rem;
+}
+
+.downloads-header {
+  margin-bottom: 2rem;
+}
+
+.downloads-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+
+/* Empty state */
+.downloads-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.empty-icon {
+  color: var(--accent-color);
+  opacity: 0.5;
+}
+
+.downloads-empty h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.downloads-empty p {
+  color: var(--text-secondary);
+  max-width: 380px;
+  font-size: 0.95rem;
+}
+
+/* List */
+.downloads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s, transform 0.2s;
+  animation: slideUp 0.3s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.download-card:hover {
+  border-color: var(--accent-color);
+  transform: translateX(4px);
+}
+
+.download-card-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(99,102,241,0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.download-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.download-card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.4rem;
+}
+
+.download-card-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.meta-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+}
+
+/* Actions */
+.download-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: #ef4444;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+.delete-btn:hover { background: rgba(239,68,68,0.1); border-color: #ef4444; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .download-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .download-card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

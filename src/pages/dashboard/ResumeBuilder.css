@@ -1,0 +1,298 @@
+.builder-container {
+  display: flex;
+  height: 100%;
+  gap: 2rem;
+  padding: 0;
+}
+
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.builder-form-side {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  border-radius: 1rem;
+}
+
+.builder-form-side::-webkit-scrollbar {
+  width: 8px;
+}
+.builder-form-side::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-section h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.dynamic-item {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  color: #ef4444;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+.remove-btn:hover {
+  background: rgba(239,68,68,0.1);
+}
+
+/* Right side preview */
+.builder-preview-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  background-color: var(--bg-tertiary);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.resume-paper {
+  background: white;
+  color: black;
+  width: 100%;
+  max-width: 8.5in;
+  min-height: 11in;
+  padding: 3rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .builder-preview-side, .builder-preview-side * {
+    visibility: visible;
+  }
+  .builder-preview-side {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 0;
+    border: none;
+  }
+  .resume-paper {
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+    padding: 2rem;
+  }
+}
+
+/* Base Template Styles */
+.resume-header {
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.resume-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.resume-title {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.resume-contact {
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+}
+
+.resume-item {
+  margin-bottom: 1rem;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.bold { font-weight: 600; color: #111827; }
+.light { font-size: 0.875rem; color: #6b7280; }
+.company { font-weight: 500; color: #4b5563; margin-bottom: 0.5rem; }
+.resume-text { font-size: 0.95rem; color: #374151; line-height: 1.5; white-space: pre-wrap; }
+
+/* === Templates Definitions === */
+
+/* Template 1: Modern default (above) */
+
+/* Template 2: Minimalist Monochrome */
+.template-2 .resume-header {
+  text-align: left;
+  border-bottom: 1px solid #000;
+}
+.template-2 .resume-name { font-family: 'Times New Roman', serif; color: #000; }
+.template-2 .resume-title { color: #333; }
+.template-2 .resume-contact { justify-content: flex-start; color: #555; }
+.template-2 .resume-section-title {
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+
+/* Template 3: Accent Header */
+.template-3 .resume-header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem;
+  margin: -3rem -3rem 2rem -3rem; /* pull to edges */
+  text-align: center;
+  border-bottom: none;
+}
+.template-3 .resume-name { color: white; }
+.template-3 .resume-title { color: #bfdbfe; }
+.template-3 .resume-contact { color: #dbeafe; }
+.template-3 .resume-section-title {
+  color: #1e3a8a;
+  border-bottom-color: #1e3a8a;
+  border-bottom-width: 2px;
+}
+
+/* Template 4: Two-Column Creative */
+.template-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.template-4 .sidebar {
+  width: 30%;
+  border-right: 2px solid #e5e7eb;
+  padding-right: 1.5rem;
+}
+.template-4 .main-col {
+  width: 70%;
+}
+.template-4 .resume-header { text-align: left; border: none; padding-bottom: 0; }
+.template-4 .resume-contact { flex-direction: column; align-items: flex-start; }
+.template-4 .resume-section-title { font-size: 1rem; border-bottom: none; padding-bottom: 0; margin-bottom: 0.5rem; }
+
+/* Template 5: Elegant Centered */
+.template-5 .resume-header {
+  text-align: center;
+  border: none;
+}
+.template-5 .resume-name { font-family: 'Outfit', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+.template-5 .resume-title { text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; }
+.template-5 .resume-section-title {
+  text-align: center;
+  border: none;
+}
+.template-5 .resume-section-title::after {
+  content: ''; display: block; width: 50px; height: 2px; background: #374151; margin: 0.5rem auto 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .builder-container {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .builder-form-side {
+    overflow-y: visible;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+  
+  .builder-preview-side {
+    overflow-y: visible;
+    padding: 1rem;
+  }
+  
+  .resume-paper {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .template-4 {
+    flex-direction: column;
+  }
+  
+  .template-4 .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #e5e7eb;
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .template-4 .main-col {
+    width: 100%;
+  }
+}

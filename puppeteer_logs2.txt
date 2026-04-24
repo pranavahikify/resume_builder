@@ -1,0 +1,25 @@
+[debug] [vite] connecting...
+[debug] [vite] connected.
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[log] [AuthContext] Mounting...
+[log] [AuthContext] Calling getSession()
+[log] [AuthContext] Setting up onAuthStateChange
+[log] [AuthContext] Unmounting, cleaning up subscription...
+[log] [AuthContext] Mounting...
+[log] [AuthContext] Calling getSession()
+[log] [AuthContext] Setting up onAuthStateChange
+[log] [AuthContext] getSession resolved, session: null
+[log] [AuthContext] getSession resolved, session: null
+[log] [AuthContext] Calling loadProfile in getSession
+[log] [loadProfile] start. authUser: 
+[log] [loadProfile] no authUser, setting profile null
+[log] [AuthContext] loadProfile finished in getSession
+[log] [AuthContext] Setting loading to false in getSession
+[log] [AuthContext] onAuthStateChange fired! event: INITIAL_SESSION session: null
+[log] [AuthContext] Calling loadProfile in onAuthStateChange
+[log] [loadProfile] start. authUser: 
+[log] [loadProfile] no authUser, setting profile null
+[log] [AuthContext] loadProfile finished in onAuthStateChange
+[log] [AuthContext] Setting loading to false in onAuthStateChange
+[verbose] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+[error] Failed to load resource: the server responded with a status of 400 ()
